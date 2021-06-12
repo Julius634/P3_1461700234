@@ -62,14 +62,14 @@ margin-top: 0;
 </style>
 </head>
 <body>
-<marquee><h2>Tambah Data Mahasiswa</marquee></h2>
+<marquee><h2>Tambah SEWA BUKU</marquee></h2>
 <div class="container">
 <form action="{{route('mahasiswa.store')}}"
 method="POST">
 @csrf
 <div class="row">
 <div class="col-25">
-<label>Nama Lengkap</label>
+<label>Nama BUKU</label>
 </div>
 <div class="col-75">
 <input type="text" name="nama_mhs">
@@ -77,7 +77,7 @@ method="POST">
 </div>
 <div class="row">
 <div class="col-25">
-<label>NBI</label>
+<label>TAHUN BUKU</label>
 </div>
 <div class="col-75">
 <input type="number" name="nbi">

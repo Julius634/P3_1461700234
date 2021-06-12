@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('mahasiswa', MahasiswaController::class);
+Route::get('/mahasiswa/pdf', [MahasiswaController::class,
+'generate']);
+
 Route::get('/mahasiswa/hapus/{id}',
 [MahasiswaController::class, 'destroy']);
+Route::resource('mahasiswa', MahasiswaController::class);
+
+

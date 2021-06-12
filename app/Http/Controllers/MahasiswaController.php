@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use PDF;
+use Excel;
 class MahasiswaController extends Controller
 {
     /**
@@ -102,4 +103,14 @@ return redirect()->route('mahasiswa.index', [$id]);
         $mhs->delete();
         return redirect()->route('mahasiswa.index');
     }
+    public function generate()
+{
+    $mhs = \App\Models\Mahasiswa::All();
+    $pdf =PDF::loadview('mahasiswa_pdf',['mahasiswa'=>$mhs]);
+    return $pdf->stream();
+}
+public function export() 
+{
+    return Excel::download(new InvoicesExport, 'invoices.xlsx');
+}
 }
